@@ -1,0 +1,23 @@
+{
+    "name": "PIPOL Data Tables",
+    "version": "1.0.0",
+    "description": "Add download button to data tables",
+    "manifest_version": 3,
+    "author": "Mark Lester Bolotaolo (mlab817@gmail.com",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "PIPOL Data Tables"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://pipol.neda.gov.ph/*"
+            ],
+            "js": [
+                "jquery-3.7.1.min.js",
+                "datatables.min.js",
+                "content.js"
+            ]
+        }
+    ]
+}
