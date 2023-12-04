@@ -67,9 +67,7 @@ $(document).ready(function () {
                     { data: 'title', name: 'title' },
                     { data: 'spatial', name: 'spatial' },
                     { data: 'chap_description', name: 'chap_description' },
-                    // {data: 'category', name: 'category'},
                     { data: 'UACS_AGY_DSC', name: 'UACS_AGY_DSC' },
-                    { data: 'statusofsubmission', name: 'statusofsubmission' },
                     { data: 'SS_statusofsubmission', name: 'SS_statusofsubmission' },
                     { data: 'rm_status', name: 'rm_status' },
                     { data: 'actions', name: 'actions' },
@@ -87,13 +85,19 @@ $(document).ready(function () {
                 orderCellsTop: true,
                 fixedHeader: true,
                 // columnDefs: [
-                //   { targets: [7], className: "text-center"},
+                //     { targets: [7], className: "text-center" },
                 // ]
             });
     } else {
+        // Create a new table element
+        // var newTable = $('<table id="newTableId" class="display"><thead><tr><th>PIP Code</th><th>Project Title</th><th>Spatial Coverage by Cost/Investment</th><th>Main PDP Chapter</th><th>Status of Submission</th><th>Status of Validation</th><th>Actions</th></tr></thead></table>');
+
+        // Assuming your div has the class "material-datatables", replace it with the actual class
+        // $('.material-datatables').empty().append(newTable);
+
         $('#datatables').DataTable(
             {
-                dom: 'Brt',
+                dom: 'Bfrtp',
                 ajax: baseUrl + endpoint,
                 serverSide: false,
                 processing: true,
@@ -102,8 +106,6 @@ $(document).ready(function () {
                     { data: 'title', name: 'title' },
                     { data: 'spatial', name: 'spatial' },
                     { data: 'chap_description', name: 'chap_description' },
-                    // { data: 'category', name: 'category' },
-                    { data: 'statusofsubmission', name: 'statusofsubmission' },
                     { data: 'SS_statusofsubmission', name: 'SS_statusofsubmission' },
                     { data: 'rm_status', name: 'rm_status' },
                     { data: 'actions', name: 'actions' },
@@ -121,7 +123,7 @@ $(document).ready(function () {
                 orderCellsTop: true,
                 fixedHeader: true,
                 // columnDefs: [
-                //   { targets: [7], className: "text-center"},
+                //     { targets: [7], className: "text-center" },
                 // ]
             });
     }
